@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reconocimiento de Voz</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Reconocimiento de Voz</h1>
+    <div id="status" class="status">Estado: Esperando...</div>
+    <textarea id="transcript" placeholder="Texto capturado aparecerá aquí..." readonly></textarea>
+    <div class="controls">
+      <button id="startBtn">Iniciar</button>
+      <button id="stopBtn">Detener</button>
+      <select id="languageSelector">
+        <option value="es-ES">Español</option>
+        <option value="en-US">Inglés</option>
+        <option value="it-IT">Italiano</option>
+        <option value="zh-CN">Chino</option>
+      </select>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
