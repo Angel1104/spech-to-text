@@ -1,7 +1,6 @@
 /**
  * Este script implementa un sistema de reconocimiento de voz usando la API Web SpeechRecognition.
- * Proporciona funcionalidades como iniciar, detener, cambiar el idioma y reiniciar automáticamente
- * cuando se detecta una pausa en el habla.
+ * Incluye botones para iniciar, detener, limpiar texto y cambiar el idioma.
  */
 
 // Verifica si el navegador soporta la API de reconocimiento de voz
@@ -15,6 +14,7 @@ if (!SpeechRecognition) {
   const transcriptElement = document.getElementById('transcript'); // Área de texto donde se mostrará el texto capturado
   const startBtn = document.getElementById('startBtn'); // Botón para iniciar el reconocimiento
   const stopBtn = document.getElementById('stopBtn'); // Botón para detener el reconocimiento
+  const clearBtn = document.getElementById('clearBtn'); // Botón para limpiar el texto
   const statusElement = document.getElementById('status'); // Elemento para mostrar el estado actual
   const languageSelector = document.getElementById('languageSelector'); // Selector de idioma
 
@@ -93,5 +93,16 @@ if (!SpeechRecognition) {
       statusElement.textContent = 'Estado: Detenido.'; // Actualiza el estado en pantalla
       console.log('Reconocimiento de voz detenido manualmente.');
     }
+  });
+
+  /**
+   * Función: Limpiar el texto
+   * Borra todo el texto acumulado en el área de texto y resetea `accumulatedText`.
+   */
+  clearBtn.addEventListener('click', () => {
+    accumulatedText = ''; // Resetea el texto acumulado
+    transcriptElement.value = ''; // Limpia el área de texto
+    console.log('Texto acumulado limpiado.');
+    statusElement.textContent = 'Estado: Texto limpio.';
   });
 }

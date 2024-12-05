@@ -63,6 +63,11 @@ button#stopBtn {
   color: #ffffff;
 }
 
+button#clearBtn {
+  background-color: #ffc107;
+  color: #ffffff;
+}
+
 select {
   padding: 10px;
   border: 1px solid #ccc;
